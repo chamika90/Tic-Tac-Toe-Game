@@ -12,6 +12,7 @@ import {
 import { GridBackground } from './GridBackground';
 import { BlinkComponent } from './BlinkComponent';
 import { COLORS } from '../../resources';
+import { isAllEqual } from '../../helpers/utils';
 
 const windowWidth = Dimensions.get('window').width;
 const cellWidth = windowWidth / 3.5;
@@ -58,10 +59,6 @@ export const TicTacToeGame: React.FC = () => {
         }
     }, [cellValues]);
 
-    type boardCellProps = {
-        cellIndex: number;
-    };
-
     const handleCellPress = (index: number) => {
         let tempArray = [...cellValues];
         if (tempArray[index] === null) {
@@ -75,8 +72,11 @@ export const TicTacToeGame: React.FC = () => {
     const calculateWinner = (inputArray: Array<String | null>) => {
         for (const row of winingRowIndexes) {
             const [a, b, c] = row;
-            if (inputArray[a] !== null && inputArray[a] === inputArray[b] && inputArray[a] === inputArray[c]) {
-                return inputArray[a];
+            if (inputArray[a]) {
+                const isAllInputsEqual = isAllEqual([inputArray[a], inputArray[b], inputArray[c]]);
+                if (isAllInputsEqual) {
+                    return inputArray[a];
+                }
             }
         }
         return null;
@@ -106,6 +106,10 @@ export const TicTacToeGame: React.FC = () => {
                 <Player />
             </BlinkComponent>
         );
+    };
+
+    type boardCellProps = {
+        cellIndex: number;
     };
 
     const BoardCell = ({ cellIndex }: boardCellProps) => {
