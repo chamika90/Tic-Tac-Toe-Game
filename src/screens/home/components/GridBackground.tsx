@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import { COLORS } from '../../resources';
+import { COLORS } from '../../../resources';
 
 export type GridBackgroundProps = {
     cellWidth: number;

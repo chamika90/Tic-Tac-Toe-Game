@@ -7,7 +7,7 @@
 import React from 'react';
 import { SafeAreaView, StatusBar, StyleSheet } from 'react-native';
 
-import { Home } from './src/home/Home';
+import { Home } from './src/screens/home/Home';
 import { COLORS } from './src/resources';
 
 const App = () => {

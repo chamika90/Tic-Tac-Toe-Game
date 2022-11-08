@@ -16,6 +16,7 @@ export const BlinkComponent: React.FC<BlinkComponentProps> = ({ duration, childr
             ]),
         ).start();
     }, []);
+
     return (
         <View>
             <Animated.View style={{ opacity: fadeAnimation }}>{children}</Animated.View>

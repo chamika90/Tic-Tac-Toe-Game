@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react-native';
 import * as React from 'react';
 
-import { GridBackground, GridBackgroundProps } from '../../../src/home/components/GridBackground';
+import { GridBackground, GridBackgroundProps } from '../../../src/screens/home/components/GridBackground';
 
 describe('Grid', () => {
     it('should render horizontal Lines container', () => {

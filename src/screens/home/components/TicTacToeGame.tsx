@@ -11,8 +11,8 @@ import {
 } from 'react-native';
 import { GridBackground } from './GridBackground';
 import { BlinkComponent } from './BlinkComponent';
-import { COLORS } from '../../resources';
-import { isAllEqual } from '../../helpers/utils';
+import { COLORS } from '../../../resources';
+import { isAllEqual } from '../../../helpers/utils';
 
 const windowWidth = Dimensions.get('window').width;
 const cellWidth = windowWidth / 3.5;
@@ -95,7 +95,7 @@ export const TicTacToeGame: React.FC = () => {
             <Image
                 testID="playerIcon"
                 style={[styles.playerIcon, { tintColor: playerIndicatorColor }]}
-                source={require('../../assets/images/icons/player-icon.png')}
+                source={require('../../../assets/images/icons/player-icon.png')}
             />
         );
     };
@@ -145,7 +145,7 @@ export const TicTacToeGame: React.FC = () => {
     const ResetButton = () => {
         return (
             <TouchableOpacity style={styles.resetButton} onPress={resetGame}>
-                <Image style={styles.resetButtonIcon} source={require('../../assets/images/icons/reset-icon.png')} />
+                <Image style={styles.resetButtonIcon} source={require('../../../assets/images/icons/reset-icon.png')} />
             </TouchableOpacity>
         );
     };
