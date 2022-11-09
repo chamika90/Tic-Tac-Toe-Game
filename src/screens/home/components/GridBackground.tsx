@@ -24,7 +24,12 @@ export const GridBackground: React.FC<GridBackgroundProps> = ({
     };
 
     const VerticalLine = () => {
-        return <View style={[{ marginTop: cellWidth, width: cellContainerWidth }, styles.verticalLine]} />;
+        return (
+            <View
+                testID="verticalLine"
+                style={[{ marginTop: cellWidth, width: cellContainerWidth }, styles.verticalLine]}
+            />
+        );
     };
 
     const HorizontalLineContainer = () => {

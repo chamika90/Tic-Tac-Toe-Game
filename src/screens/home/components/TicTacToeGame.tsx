@@ -34,6 +34,9 @@ const playerYColor = COLORS.PINK_50;
 const playerX = 'X';
 const playerO = 'O';
 
+const resetIcon = '../../../assets/images/icons/reset-icon.png';
+const playerIcon = '../../../assets/images/icons/player-icon.png';
+
 export const TicTacToeGame: React.FC = () => {
     const [currentPlayer, setCurrentPlayer] = useState(playerX);
     const [playerIndicatorColor, setPlayerIndicatorColor] = useState(playerXColor);
@@ -95,7 +98,7 @@ export const TicTacToeGame: React.FC = () => {
             <Image
                 testID="playerIcon"
                 style={[styles.playerIcon, { tintColor: playerIndicatorColor }]}
-                source={require('../../../assets/images/icons/player-icon.png')}
+                source={require(playerIcon)}
             />
         );
     };
@@ -145,7 +148,7 @@ export const TicTacToeGame: React.FC = () => {
     const ResetButton = () => {
         return (
             <TouchableOpacity style={styles.resetButton} onPress={resetGame}>
-                <Image style={styles.resetButtonIcon} source={require('../../../assets/images/icons/reset-icon.png')} />
+                <Image style={styles.resetButtonIcon} source={require(resetIcon)} />
             </TouchableOpacity>
         );
     };
